@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1><center>
+                Prover API
+            </center></h1>
+            <h2><center>
+                Proverbs written by an Author
+            </center></h2>
+        <p>The Author you searched for is "{{athr}}".</p>
+        {% if len_result == 0 %}
+            <p>Proverbs written by the {{athr}} is not present in our DB.</p>
+        {% else %}
+            <p>Proverb(s) by this Author are : </p>
+            {% for ln in result %}
+                {% for item in ln%}
+                    <li>&emsp; {{item}}</li>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
